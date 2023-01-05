@@ -31,8 +31,8 @@ docker rmi -f amit1300/$JOB_NAME:latest $JOB_NAME:v$BUILD_ID amit1300/$JOB_NAME:
       
         stage('playbook') {
             steps {
-                cd /root/project/
-ansible-playbook playbook.yaml
+        sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''cd /root/project/
+ansible-playbook playbook.yaml''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
       
