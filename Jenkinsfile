@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('git download') {
             steps {
-                git branch: 'main', url: 'https://github.com/Amit1300/jenkinauto'
+                git branch: 'main', url: 'https://github.com/Amit1300/Devops-Ready'
             }
         }
       
